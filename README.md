@@ -7,5 +7,5 @@ A typical coding assessment is a combination of multiple-choice questions and in
 * CSS
 * JavaScript
 
-Copyright 2021
+August 2021
 Paul Thomas
