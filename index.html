@@ -2,14 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Coding Quiz</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
 <body>
-    <h1>This is my coding assessment interactive quiz.</h1>
-    <h6 id="countdown"></h6>
-    <script src="./assets/js/script.js"></script>    
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="highscores.html">View Highscores</a>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">Time: <span id="seconds-remaining">0</span></li>              
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="offset-lg-3"></div>
+      <div class="col-12 col-lg-6 main-content">
+        <div class="quiz-intro">
+          <!--- <img class="header-img" src="assets/images/question-circle-solid.svg" alt="quiz intro header image"> --->
+          <h1>Coding Quiz Challenge</h1>
+          <h6>
+            Try to answer the following ten questions within the time limit. Keep in mind that incorrect answers will 
+            penalize your score/time by ten seconds. 
+            <br><br>
+            The buttons with the blue background are the correct buttons to press.
+          </h6>
+          <div class="button-container">
+            <button id="btnStart" type="button" class="btn btn-primary">Start Quiz</button>
+          </div>
+        </div>
+      </div>
+      <div class="offset-lg-3"></div>
+    </div>  
+  </div>
+
+  <script src="assets/js/questions.js"></script>
+  <script src="assets/js/scores.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
