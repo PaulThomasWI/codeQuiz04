@@ -1,22 +1,21 @@
 var scoreList = document.querySelector("#highscore-list");
 
-var aryHS = [{
+var aryScores = {
     initials : [],
     scores : [],
-}];
+}
 
 function getScores() {
     var storedHighscoresString = localStorage.getItem("highscores");
 
     if (storedHighscoresString !== null) {
         var storedHighscores = JSON.parse(storedHighscoresString);
-
-        aryHS.initials = storedHighscores.initials;
-        aryHS.scores   = storedHighscores.scores;
+        aryScores.initials   = storedHighscores.initials;
+        aryScores.scores     = storedHighscores.scores;
     }
     else {
-        aryHS.initials = [];
-        aryHS.scores   = [];
+        aryScores.initials = [];
+        aryScores.scores   = [];
     }
 }
 
@@ -25,11 +24,11 @@ function renderScores() {
     
     getScores();
 
-    for (var i = 0; i < aryHS.initials.length; i++) {
+    for (var i = 0; i < aryScores.initials.length; i++) {
         var listEl = document.createElement("li");
         var pEl = document.createElement("p");
         pEl.setAttribute("class", "highscore");
-        pEl.textContent = (i + 1) + ". " + aryHS.initials[i] + " - " + aryHS.scores[i];
+        pEl.textContent = aryScores.initials[i] + " - " + aryScores.scores[i];
         
         listEl.appendChild(pEl);
         scoreList.appendChild(listEl);
@@ -39,10 +38,10 @@ function renderScores() {
 function saveScore(newInitials, newScore) {
     getScores();
     
-    aryHS.initials.push(newInitials);
-    aryHS.scores.push(newScore);
+    aryScores.initials.push(newInitials);
+    aryScores.scores.push(newScore);
 
-    var highscoresString = JSON.stringify(aryHS);
+    var highscoresString = JSON.stringify(aryScores);
     localStorage.setItem("highscores", highscoresString);
 }
 
